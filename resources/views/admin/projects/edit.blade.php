@@ -25,6 +25,15 @@
                         @enderror
                     </div>
                     <div class="form-group my-2">
+                        <label class="fs-2 fw-semibold" for="tipo">Tipo</label>
+                        <select class="d-block" name="type_id" id="tipo">
+                            <option value="">Seleziona tipo</option>
+                            @foreach ($types as $type)                                
+                            <option value="{{$type->id}}" {{ $type->id == old('type_id', $project->type_id) ? 'selected' : ''}}>{{$type->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group my-2">
                         <label class="fs-2 fw-semibold" for="description">Descrizione</label>
                         <textarea type="password" class="form-control" name="descrizione" id="description" value="{!!nl2br( old('descrizione') ?? $project->descrizione )!!}" placeholder="Inserire Descrizione">{{old('descrizione') ?? $project->descrizione}}</textarea>
                         @error('descrizione')

@@ -43,6 +43,7 @@ class StoreProjectRequest extends FormRequest
             'titolo.max' => 'Carattere massimo :max',
             'descrizione.required' => 'Descrizione obbligatorio',
             'descrizione.max' => 'Carattere massimo :max',
+            'type_id.exists' => 'Seleziona tipo'
         ];
     }
 }

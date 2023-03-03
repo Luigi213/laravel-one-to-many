@@ -26,7 +26,8 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'titolo' => ['required', Rule::unique('projects')->ignore($this->post),'max:60'],
-            'descrizione' => ['required','max:150']
+            'descrizione' => ['required','max:150'],
+            'type_id' => ['nullable','exists:types,id'],
         ];
     }
 
@@ -42,7 +43,8 @@ class UpdateProjectRequest extends FormRequest
             'titolo.unique' => 'Titolo già in uso',
             'titolo.max' => 'Carattere massimo :max',
             'descrizione.required' => 'Descrizione obbligatorio',
-            'descrizione.max' => 'Carattere massimo :max'
+            'descrizione.max' => 'Carattere massimo :max',
+            'type_id.exists' => 'Seleziona tipo'
         ];
     }
 }
