@@ -8,6 +8,7 @@
                 <div class="mt-3">                 
                     <h3>{{ $project->titolo}}</h3>
                     <p>{{ $project->descrizione}}</p>
+                    <p>tipo: {{$project->type_id }}</p>
                 </div>
             </div>
         </div>

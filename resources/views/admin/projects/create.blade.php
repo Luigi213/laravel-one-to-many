@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-group my-2">
                         <label class="fs-2 fw-semibold" for="tipo">Tipo</label>
-                        <select class="d-block" name="type" id="tipo">
+                        <select class="d-block" name="type_id" id="tipo">
                             <option value="">Seleziona tipo</option>
                             @foreach ($types as $type)                                
                             <option value="{{$type->id}}">{{$type->name}}</option>
