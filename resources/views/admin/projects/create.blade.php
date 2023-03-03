@@ -24,6 +24,15 @@
                         @enderror
                     </div>
                     <div class="form-group my-2">
+                        <label class="fs-2 fw-semibold" for="tipo">Tipo</label>
+                        <select class="d-block" name="type" id="tipo">
+                            <option value="">Seleziona tipo</option>
+                            @foreach ($types as $type)                                
+                            <option value="{{$type->id}}">{{$type->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group my-2">
                         <label class="fs-2 fw-semibold" for="description">Descrizione</label>
                         <textarea type="password" class="form-control" name="descrizione" id="description" placeholder="Inserire Descrizione"></textarea>
                         @error('descrizione')
