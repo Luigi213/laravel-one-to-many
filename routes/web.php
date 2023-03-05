@@ -26,7 +26,7 @@ Route::get('/', function(){
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')->group(function(){
     Route::get('/', [PageController::class, 'index'])->name('dashboard');
     Route::resource('/projects', ProjectController::class)->parameters(['projects' => 'project:titolo']);
-    Route::resource('/types', TypeController::class)->parameters(['types' => 'type:titolo']);
+    Route::resource('/types', TypeController::class)->parameters(['types' => 'type:name']);
 });
 
 Route::middleware('auth')->group(function () {
