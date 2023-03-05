@@ -11,31 +11,13 @@
                     @endforeach                        
                 </ul>
             @endif
-            <form method="POST" action="{{route('admin.projects.store')}}">
+            <form method="POST" action="{{route('admin.types.store')}}">
                 @csrf 
 
                 <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="title">Titolo</label>
-                    <input type="text" class="form-control" name="titolo" id="title" placeholder="Inserire Titolo">
-                    @error('titolo')
-                        <div class="mt-2 alert alert-danger">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-                <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="tipo">Tipo</label>
-                    <select class="d-block" name="type_id" id="tipo">
-                        <option value="">Seleziona tipo</option>
-                        @foreach ($types as $type)                                
-                        <option value="{{$type->id}}">{{$type->name}}</option>
-                        @endforeach
-                    </select>
-                </div>
-                <div class="form-group my-2">
-                    <label class="fs-2 fw-semibold" for="description">Descrizione</label>
-                    <textarea type="password" class="form-control" name="descrizione" id="description" placeholder="Inserire Descrizione"></textarea>
-                    @error('descrizione')
+                    <label class="fs-2 fw-semibold" for="nome">Titolo</label>
+                    <input type="text" class="form-control" name="name" id="nome" placeholder="Inserire Titolo">
+                    @error('name')
                         <div class="mt-2 alert alert-danger">
                             {{ $message }}
                         </div>
